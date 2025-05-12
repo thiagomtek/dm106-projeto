@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("InventarioMed.Shared.Data")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+4c3991394eb4ec1c244cf2b270ec366a2d867bed")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+dbf704b6859932fc3d9f1d39ea798629da364944")]
 [assembly: System.Reflection.AssemblyProductAttribute("InventarioMed.Shared.Data")]
 [assembly: System.Reflection.AssemblyTitleAttribute("InventarioMed.Shared.Data")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

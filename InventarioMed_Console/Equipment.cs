@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace InventarioMed_Console
 {
-    public class Equipment
+    internal class Equipment
     {
         public Equipment(string name, string manufacturer)
         {
@@ -15,15 +15,12 @@ namespace InventarioMed_Console
         }
         public string Name { get; set; }
         public string Manufacturer { get; set; }
-        public int Id { get; set; }
-
-        public int Id { get; set; }
 
         private List<Category> Categories = new();
 
         public override string ToString()
         {
-            return $@"{Id}- Nome: {Name}";
+            return $@"Equipamento: {Name}";
         }
         public void AddCategory(Category c)
         {
