@@ -1,187 +1,111 @@
-﻿using EncomendasConsole;
+﻿using InventarioMed.Shared.Data.BD;
 
 internal class Program
 {
-    public static Dictionary<string, Order> OrderList = new();
-    public static List<DeliveryLocation> LocationList = new();
+    private static DAL<Order> orderDAL = new();
+    private static DAL<Item> itemDAL = new();
+    private static DAL<Tag> tagDAL = new();
 
-    private static void Main(string[] args)
+    private static void Main()
     {
         bool exit = false;
         while (!exit)
         {
-            Console.WriteLine("\nBem-vindo ao Sistema de Encomendas!\n");
-            Console.WriteLine("Digite 1 para registrar uma encomenda");
-            Console.WriteLine("Digite 2 para adicionar um item à encomenda");
-            Console.WriteLine("Digite 3 para adicionar um local de entrega à encomenda");
-            Console.WriteLine("Digite 4 para mostrar todas as encomendas");
-            Console.WriteLine("Digite 5 para mostrar os itens de uma encomenda");
-            Console.WriteLine("Digite 6 para mostrar os locais de entrega de uma encomenda");
-            Console.WriteLine("Digite 7 para mostrar encomendas por local de entrega");
-            Console.WriteLine("Digite -1 para sair\n");
+            Console.WriteLine("Order Management System:");
+            Console.WriteLine("1 - Create new order");
+            Console.WriteLine("2 - Add item to order");
+            Console.WriteLine("3 - Add tag to order");
+            Console.WriteLine("4 - List all orders");
+            Console.WriteLine("5 - List tags of order");
+            Console.WriteLine("-1 - Exit");
+            Console.Write("Select option: ");
 
-            Console.Write("Escolha sua opção: ");
-            int opcao = int.Parse(Console.ReadLine());
+            int option = int.Parse(Console.ReadLine()!);
 
-            switch (opcao)
+            switch (option)
             {
-                case 1:
-                    OrderRegistration();
-                    break;
-                case 2:
-                    ItemRegistration();
-                    break;
-                case 3:
-                    LocationRegistration();
-                    break;
-                case 4:
-                    ShowAllOrders();
-                    break;
-                case 5:
-                    ShowOrderItems();
-                    break;
-                case 6:
-                    ShowOrderLocations();
-                    break;
-                case 7:
-                    ShowOrdersByLocation();
-                    break;
-                case -1:
-                    Console.WriteLine("Encerrando o sistema. Até logo!");
-                    exit = true;
-                    break;
-                default:
-                    Console.WriteLine("Opção inválida");
-                    break;
+                case 1: CreateOrder(); break;
+                case 2: AddItem(); break;
+                case 3: AddTag(); break;
+                case 4: ShowOrders(); break;
+                case 5: ShowTags(); break;
+                case -1: exit = true; break;
+                default: Console.WriteLine("Invalid option."); break;
             }
         }
     }
 
-    private static void OrderRegistration()
+    private static void CreateOrder()
     {
-        Console.Clear();
-        Console.WriteLine("Registro de encomenda");
-        Console.Write("Digite o código da encomenda: ");
-        string code = Console.ReadLine();
-        Console.Write("Digite o nome do cliente: ");
-        string customer = Console.ReadLine();
-
-        Order order = new(code, customer);
-        OrderList.Add(code, order);
-        Console.WriteLine($"Encomenda {code} registrada com sucesso!");
+        Console.Write("Enter order description: ");
+        string? desc = Console.ReadLine();
+        orderDAL.Create(new Order { Description = desc });
+        Console.WriteLine("Order created.");
     }
 
-    private static void ItemRegistration()
+    private static void AddItem()
     {
-        Console.Clear();
-        Console.WriteLine("Adicionar item à encomenda");
-        Console.Write("Digite o código da encomenda: ");
-        string code = Console.ReadLine();
+        Console.Write("Enter order ID: ");
+        int orderId = int.Parse(Console.ReadLine()!);
+        Console.Write("Enter item name: ");
+        string? itemName = Console.ReadLine();
 
-        if (OrderList.ContainsKey(code))
+        itemDAL.Create(new Item { Name = itemName, OrderId = orderId });
+        Console.WriteLine("Item added.");
+    }
+
+    private static void AddTag()
+    {
+        Console.Write("Enter order ID: ");
+        int orderId = int.Parse(Console.ReadLine()!);
+        Console.Write("Enter tag label: ");
+        string? label = Console.ReadLine();
+
+        var tag = new Tag { Label = label };
+        tagDAL.Create(tag);
+
+        var order = orderDAL.ReadBy(o => o.Id == orderId);
+        if (order != null)
         {
-            Console.Write("Descrição do item: ");
-            string desc = Console.ReadLine();
-            Console.Write("Quantidade: ");
-            int qty = int.Parse(Console.ReadLine());
-
-            OrderItem item = new(desc, qty);
-            OrderList[code].AddItem(item);
-            Console.WriteLine("Item adicionado com sucesso!");
+            order.Tags.Add(tag);
+            orderDAL.Update(order);
+            Console.WriteLine("Tag added.");
         }
         else
         {
-            Console.WriteLine("Encomenda não encontrada.");
+            Console.WriteLine("Order not found.");
         }
     }
 
-    private static void LocationRegistration()
+    private static void ShowOrders()
     {
-        Console.Clear();
-        Console.WriteLine("Adicionar local de entrega à encomenda");
-        Console.Write("Digite o código da encomenda: ");
-        string code = Console.ReadLine();
-
-        if (OrderList.ContainsKey(code))
+        var orders = orderDAL.Read();
+        foreach (var order in orders)
         {
-            Console.Write("Endereço de entrega: ");
-            string address = Console.ReadLine();
-
-            var existingLocation = LocationList.FirstOrDefault(loc => loc.Address == address);
-            if (existingLocation == null)
+            Console.WriteLine($"Order {order.Id}: {order.Description}");
+            foreach (var item in order.Items)
             {
-                existingLocation = new DeliveryLocation(address);
-                LocationList.Add(existingLocation);
+                Console.WriteLine($"  - Item: {item.Name}");
             }
-
-            OrderList[code].AddLocation(existingLocation);
-            Console.WriteLine("Local de entrega associado com sucesso!");
-        }
-        else
-        {
-            Console.WriteLine("Encomenda não encontrada.");
         }
     }
 
-    private static void ShowAllOrders()
+    private static void ShowTags()
     {
-        Console.Clear();
-        Console.WriteLine("Todas as encomendas cadastradas:");
-        foreach (var order in OrderList.Values)
-        {
-            Console.WriteLine(order);
-        }
-    }
+        Console.Write("Enter order ID: ");
+        int orderId = int.Parse(Console.ReadLine()!);
 
-    private static void ShowOrderItems()
-    {
-        Console.Clear();
-        Console.WriteLine("Itens de uma encomenda");
-        Console.Write("Digite o código da encomenda: ");
-        string code = Console.ReadLine();
-
-        if (OrderList.ContainsKey(code))
+        var order = orderDAL.ReadBy(o => o.Id == orderId);
+        if (order != null)
         {
-            OrderList[code].ShowItems();
+            foreach (var tag in order.Tags)
+            {
+                Console.WriteLine($"- Tag: {tag.Label}");
+            }
         }
         else
         {
-            Console.WriteLine("Encomenda não encontrada.");
-        }
-    }
-
-    private static void ShowOrderLocations()
-    {
-        Console.Clear();
-        Console.WriteLine("Locais de entrega de uma encomenda");
-        Console.Write("Digite o código da encomenda: ");
-        string code = Console.ReadLine();
-
-        if (OrderList.ContainsKey(code))
-        {
-            OrderList[code].ShowLocations();
-        }
-        else
-        {
-            Console.WriteLine("Encomenda não encontrada.");
-        }
-    }
-
-    private static void ShowOrdersByLocation()
-    {
-        Console.Clear();
-        Console.WriteLine("Encomendas por local de entrega");
-        Console.Write("Digite o endereço de entrega: ");
-        string address = Console.ReadLine();
-
-        var location = LocationList.FirstOrDefault(loc => loc.Address == address);
-        if (location != null)
-        {
-            location.ShowOrders();
-        }
-        else
-        {
-            Console.WriteLine("Endereço não encontrado.");
+            Console.WriteLine("Order not found.");
         }
     }
 }
