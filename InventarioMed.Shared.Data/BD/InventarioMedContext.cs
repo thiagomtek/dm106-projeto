@@ -1,4 +1,5 @@
 ﻿using Microsoft.EntityFrameworkCore;
+using InventarioMed.Shared.Entities;
 
 namespace InventarioMed.Shared.Data.BD
 {
@@ -8,9 +9,7 @@ namespace InventarioMed.Shared.Data.BD
         public DbSet<Item> Items { get; set; }
         public DbSet<Tag> Tags { get; set; }
 
-        private readonly string connectionString =
-            "Data Source=(localdb)\\MSSQLLocalDB;Initial Catalog=InventarioMed_BD_V1;Integrated Security=True;Encrypt=False;Trust Server Certificate=False;Application Intent=ReadWrite;Multi Subnet Failover=False";
-
+        private string connectionString = "Data Source=(localdb)\\MSSQLLocalDB;Initial Catalog=InventarioMed_BD_V1;Integrated Security=True;Encrypt=False;";
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
             optionsBuilder
@@ -27,7 +26,8 @@ namespace InventarioMed.Shared.Data.BD
 
             modelBuilder.Entity<Order>()
                 .HasMany(o => o.Tags)
-                .WithMany(t => t.Orders);
+                .WithMany(t => t.Orders)
+                .UsingEntity(j => j.ToTable("OrderTags"));
         }
     }
 }

@@ -1,10 +1,10 @@
-﻿namespace InventarioMed.Shared.Data.BD
+﻿namespace InventarioMed.Shared.Entities
 {
     public class Tag
     {
         public int Id { get; set; }
-        public string? Label { get; set; }
+        public string Label { get; set; } = string.Empty;
 
-        public virtual List<Order> Orders { get; set; } = new();
+        public virtual ICollection<Order> Orders { get; set; } = new List<Order>();
     }
 }

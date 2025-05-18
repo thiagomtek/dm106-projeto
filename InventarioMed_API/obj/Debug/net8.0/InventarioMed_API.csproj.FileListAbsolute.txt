@@ -178,3 +178,8 @@ C:\Users\tmagalhaes\GIT\inventariomed\InventarioMed_API\obj\Debug\net8.0\refint\
 C:\Users\tmagalhaes\GIT\inventariomed\InventarioMed_API\obj\Debug\net8.0\InventarioMed_API.pdb
 C:\Users\tmagalhaes\GIT\inventariomed\InventarioMed_API\obj\Debug\net8.0\InventarioMed_API.genruntimeconfig.cache
 C:\Users\tmagalhaes\GIT\inventariomed\InventarioMed_API\obj\Debug\net8.0\ref\InventarioMed_API.dll
+C:\Users\tmagalhaes\GIT\inventariomed\InventarioMed_API\bin\Debug\net8.0\Microsoft.OpenApi.dll
+C:\Users\tmagalhaes\GIT\inventariomed\InventarioMed_API\bin\Debug\net8.0\Swashbuckle.AspNetCore.Swagger.dll
+C:\Users\tmagalhaes\GIT\inventariomed\InventarioMed_API\bin\Debug\net8.0\Swashbuckle.AspNetCore.SwaggerGen.dll
+C:\Users\tmagalhaes\GIT\inventariomed\InventarioMed_API\bin\Debug\net8.0\Swashbuckle.AspNetCore.SwaggerUI.dll
+C:\Users\tmagalhaes\GIT\inventariomed\InventarioMed_API\obj\Debug\net8.0\InventarioMed_API.MvcApplicationPartsAssemblyInfo.cs
