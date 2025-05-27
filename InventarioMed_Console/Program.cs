@@ -1,41 +1,47 @@
 ﻿using InventarioMed_Console;
+using InventarioMed.Shared.Data.BD;
+using InventarioMed.Shared.Entities;
+using System.Xml;
 
 internal class Program
-{   
-    public static Dictionary<string, Equipment> EquipmentList = new();
+{
+    public static Dictionary<string, Order> OrderList = new();
+
     private static void Main(string[] args)
     {
-        
+        var orderDAL = new DAL<Order>();
+        var itemDAL = new DAL<Item>();
 
         bool exit = false;
         while (!exit)
         {
-            Console.WriteLine("Você chegou na InventarioMed!\n");
-            Console.WriteLine("Digite 1 para registrar um equipamento");
-            Console.WriteLine("Digite 2 para registrar a categoria de um equipamento");
-            Console.WriteLine("Digite 3 para mostrar todos os equipamentos");
-            Console.WriteLine("Digite 4 para mostrar as categorias de um equipamento");
+            Console.Clear();
+            Console.WriteLine("Você chegou na InventarioMed - Gestão de Encomendas!\n");
+            Console.WriteLine("Digite 1 para registrar uma encomenda");
+            Console.WriteLine("Digite 2 para adicionar um item a uma encomenda");
+            Console.WriteLine("Digite 3 para mostrar todas as encomendas");
+            Console.WriteLine("Digite 4 para mostrar os itens de uma encomenda");
             Console.WriteLine("Digite -1 para sair\n");
 
-            Console.WriteLine("Escolha sua opção");
+            Console.Write("Escolha sua opção: ");
             int opcao = int.Parse(Console.ReadLine());
 
             switch (opcao)
             {
                 case 1:
-                    EquipmentRegistration();
+                    OrderRegistration();
                     break;
                 case 2:
-                    CategoryRegistration();
+                    ItemRegistration();
                     break;
                 case 3:
-                    EquipmentGet();
+                    OrderListAll();
                     break;
                 case 4:
-                    CategoryGet();
+                    ItemListByOrder();
                     break;
                 case -1:
-                    Console.WriteLine("Até mais");
+                    Console.WriteLine("Até mais!");
                     exit = true;
                     break;
                 default:
@@ -43,65 +49,78 @@ internal class Program
                     break;
             }
         }
-    }
 
-    private static void CategoryGet()
-    {
-        Console.Clear();
-        Console.WriteLine("Exibir detalhes do equipamento");
-        Console.WriteLine("Digite o equipamento cujas categorias deseja consultar");
-        string equipmentName = Console.ReadLine();
-        if (EquipmentList.ContainsKey(equipmentName))
+        void OrderRegistration()
         {
-            Equipment e = EquipmentList[equipmentName];
-            e.ShowCategories();
-        }
-        else
-        {
-            Console.WriteLine($"O equipamento {equipmentName} não existe");
-        }
-    }
+            Console.Clear();
+            Console.WriteLine("Registro de encomenda");
+            Console.Write("Digite o nome do cliente: ");
+            string clientName = Console.ReadLine();
 
-    private static void EquipmentGet()
-    {
-        Console.Clear();
-        Console.WriteLine("Lista de equipamentos:");
-        foreach (var item in EquipmentList.Values)
-        {
-            Console.WriteLine(item);
-        }
-    }
+            var order = new Order { ClientName = clientName };
+            orderDAL.Create(order);
 
-    private static void CategoryRegistration()
-    {
-        Console.Clear();
-        Console.WriteLine("Registro de categorias");
-        Console.WriteLine("Digite o nome do equipamento cuja categoria você deseja registrar");
-        string equipmentName = Console.ReadLine();
-        if (EquipmentList.ContainsKey(equipmentName))
-        {
-            Console.WriteLine($"Informe o nome da categoria do {equipmentName}");
-            string name = Console.ReadLine();
-            Equipment e = EquipmentList[equipmentName];
-            e.AddCategory(new Category(name));
-            Console.WriteLine($"A categoria {name} do {equipmentName} foi registrada com sucesso");
+            Console.WriteLine($"Encomenda para {clientName} registrada com sucesso!");
+            Console.ReadKey();
         }
-        else
-        {
-            Console.WriteLine($"O equipamento {equipmentName} não existe");
-        }
-    }
 
-    private static void EquipmentRegistration()
-    {
-        Console.Clear();
-        Console.WriteLine("Registro de equipamento");
-        Console.WriteLine("Digite o nome do equipamento que você deseja cadastrar");
-        string name = Console.ReadLine();
-        Console.WriteLine("Digite o fabricante do equipamento que você deseja cadastrar");
-        string manufacturer = Console.ReadLine();
-        Equipment e = new(name, manufacturer);
-        EquipmentList.Add(name, e);
-        Console.WriteLine($"Equipamento {name} adcionado com sucesso!");
+        void ItemRegistration()
+        {
+            Console.Clear();
+            Console.WriteLine("Adicionar item à encomenda");
+            Console.Write("Digite o nome do cliente (encomenda): ");
+            string clientName = Console.ReadLine();
+
+            var order = orderDAL.ReadBy(o => o.ClientName.Equals(clientName));
+            if (order != null)
+            {
+                Console.Write("Digite o nome do produto: ");
+                string productName = Console.ReadLine();
+
+                var item = new Item { ProductName = productName, OrderId = order.Id };
+                itemDAL.Create(item);
+
+                Console.WriteLine($"Item {productName} adicionado à encomenda de {clientName}.");
+            }
+            else
+            {
+                Console.WriteLine($"Encomenda de {clientName} não encontrada.");
+            }
+            Console.ReadKey();
+        }
+
+        void OrderListAll()
+        {
+            Console.Clear();
+            Console.WriteLine("Lista de todas as encomendas:");
+            foreach (var order in orderDAL.Read())
+            {
+                Console.WriteLine($"ID: {order.Id} - Cliente: {order.ClientName}");
+            }
+            Console.ReadKey();
+        }
+
+        void ItemListByOrder()
+        {
+            Console.Clear();
+            Console.WriteLine("Ver itens de uma encomenda");
+            Console.Write("Digite o nome do cliente: ");
+            string clientName = Console.ReadLine();
+
+            var order = orderDAL.ReadBy(o => o.ClientName.Equals(clientName));
+            if (order != null)
+            {
+                Console.WriteLine($"Itens da encomenda de {clientName}:");
+                foreach (var item in order.Items)
+                {
+                    Console.WriteLine($"- {item.ProductName}");
+                }
+            }
+            else
+            {
+                Console.WriteLine($"Encomenda de {clientName} não encontrada.");
+            }
+            Console.ReadKey();
+        }
     }
 }

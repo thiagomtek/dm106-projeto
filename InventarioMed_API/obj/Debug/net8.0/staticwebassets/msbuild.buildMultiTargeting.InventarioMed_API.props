@@ -1,0 +1,3 @@
+﻿<Project>
+  <Import Project="..\build\InventarioMed_API.props" />
+</Project>

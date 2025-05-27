@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("InventarioMed_Console")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+4996851db81e6c125c77b8d9a5943d029a5f3c19")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+e5fd29045a01c0429bad731de0c0d39753ec2e0f")]
 [assembly: System.Reflection.AssemblyProductAttribute("InventarioMed_Console")]
 [assembly: System.Reflection.AssemblyTitleAttribute("InventarioMed_Console")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

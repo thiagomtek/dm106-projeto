@@ -1,0 +1,15 @@
+C:\Users\tmagalhaes\GIT\inventariomed\InventarioMed.Shared.Models\bin\Debug\net8.0\InventarioMed.Shared.Models.deps.json
+C:\Users\tmagalhaes\GIT\inventariomed\InventarioMed.Shared.Models\bin\Debug\net8.0\InventarioMed.Shared.Models.runtimeconfig.json
+C:\Users\tmagalhaes\GIT\inventariomed\InventarioMed.Shared.Models\bin\Debug\net8.0\InventarioMed.Shared.Models.dll
+C:\Users\tmagalhaes\GIT\inventariomed\InventarioMed.Shared.Models\bin\Debug\net8.0\InventarioMed.Shared.Models.pdb
+C:\Users\tmagalhaes\GIT\inventariomed\InventarioMed.Shared.Models\obj\Debug\net8.0\InventarioMed.Shared.Models.csproj.AssemblyReference.cache
+C:\Users\tmagalhaes\GIT\inventariomed\InventarioMed.Shared.Models\obj\Debug\net8.0\InventarioMed.Shared.Models.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\tmagalhaes\GIT\inventariomed\InventarioMed.Shared.Models\obj\Debug\net8.0\InventarioMed.Shared.Models.AssemblyInfoInputs.cache
+C:\Users\tmagalhaes\GIT\inventariomed\InventarioMed.Shared.Models\obj\Debug\net8.0\InventarioMed.Shared.Models.AssemblyInfo.cs
+C:\Users\tmagalhaes\GIT\inventariomed\InventarioMed.Shared.Models\obj\Debug\net8.0\InventarioMed.Shared.Models.csproj.CoreCompileInputs.cache
+C:\Users\tmagalhaes\GIT\inventariomed\InventarioMed.Shared.Models\obj\Debug\net8.0\InventarioMed.Shared.Models.sourcelink.json
+C:\Users\tmagalhaes\GIT\inventariomed\InventarioMed.Shared.Models\obj\Debug\net8.0\InventarioMed.Shared.Models.dll
+C:\Users\tmagalhaes\GIT\inventariomed\InventarioMed.Shared.Models\obj\Debug\net8.0\refint\InventarioMed.Shared.Models.dll
+C:\Users\tmagalhaes\GIT\inventariomed\InventarioMed.Shared.Models\obj\Debug\net8.0\InventarioMed.Shared.Models.pdb
+C:\Users\tmagalhaes\GIT\inventariomed\InventarioMed.Shared.Models\obj\Debug\net8.0\InventarioMed.Shared.Models.genruntimeconfig.cache
+C:\Users\tmagalhaes\GIT\inventariomed\InventarioMed.Shared.Models\obj\Debug\net8.0\ref\InventarioMed.Shared.Models.dll
