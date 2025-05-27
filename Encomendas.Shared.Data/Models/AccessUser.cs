@@ -9,5 +9,7 @@ namespace Encomendas.Shared.Data.Models
 {
     public class AccessUser : IdentityUser<int>
     {
+        public string? FullName { get; set; }
+        public DateTime CreatedAt { get; set; } = DateTime.UtcNow;
     }
 }

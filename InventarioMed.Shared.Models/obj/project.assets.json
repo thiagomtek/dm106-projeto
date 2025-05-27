@@ -4749,9 +4749,9 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\tmagalhaes\\GIT\\inventariomed\\InventarioMed.Shared.Models\\InventarioMed.Shared.Models.csproj",
-      "projectName": "InventarioMed.Shared.Models",
-      "projectPath": "C:\\Users\\tmagalhaes\\GIT\\inventariomed\\InventarioMed.Shared.Models\\InventarioMed.Shared.Models.csproj",
+      "projectUniqueName": "C:\\Users\\tmagalhaes\\GIT\\inventariomed\\InventarioMed.Shared.Models\\Encomendas.Shared.Models.csproj",
+      "projectName": "Encomendas.Shared.Models",
+      "projectPath": "C:\\Users\\tmagalhaes\\GIT\\inventariomed\\InventarioMed.Shared.Models\\Encomendas.Shared.Models.csproj",
       "packagesPath": "C:\\Users\\tmagalhaes\\.nuget\\packages\\",
       "outputPath": "C:\\Users\\tmagalhaes\\GIT\\inventariomed\\InventarioMed.Shared.Models\\obj\\",
       "projectStyle": "PackageReference",
