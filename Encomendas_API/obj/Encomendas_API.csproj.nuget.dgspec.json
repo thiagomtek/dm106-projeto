@@ -32,6 +32,9 @@
           "net8.0": {
             "targetAlias": "net8.0",
             "projectReferences": {
+              "C:\\Users\\tmagalhaes\\GIT\\inventariomed\\Encomendas.Shared.Models\\Encomendas.Shared.Models.csproj": {
+                "projectPath": "C:\\Users\\tmagalhaes\\GIT\\inventariomed\\Encomendas.Shared.Models\\Encomendas.Shared.Models.csproj"
+              },
               "C:\\Users\\tmagalhaes\\GIT\\inventariomed\\InventarioMed.Shared.Models\\InventarioMed.Shared.Models.csproj": {
                 "projectPath": "C:\\Users\\tmagalhaes\\GIT\\inventariomed\\InventarioMed.Shared.Models\\InventarioMed.Shared.Models.csproj"
               }

@@ -1651,48 +1651,6 @@
           "lib/netcoreapp2.1/_._": {}
         }
       },
-      "Encomendas.Shared.Data/1.0.0": {
-        "type": "project",
-        "framework": ".NETCoreApp,Version=v8.0",
-        "dependencies": {
-          "Encomendas.Shared.Models": "1.0.0",
-          "InventarioMed.Shared.Models": "1.0.0",
-          "Microsoft.AspNetCore.Identity.EntityFrameworkCore": "8.0.7",
-          "Microsoft.AspNetCore.OpenApi": "8.0.7",
-          "Microsoft.Data.SqlClient": "6.0.2",
-          "Microsoft.EntityFrameworkCore.Proxies": "9.0.4",
-          "Microsoft.EntityFrameworkCore.SqlServer": "9.0.4",
-          "Swashbuckle.AspNetCore": "8.1.1",
-          "Swashbuckle.AspNetCore.Swagger": "8.1.1",
-          "Swashbuckle.AspNetCore.SwaggerUI": "8.1.1"
-        },
-        "compile": {
-          "bin/placeholder/Encomendas.Shared.Data.dll": {}
-        },
-        "runtime": {
-          "bin/placeholder/Encomendas.Shared.Data.dll": {}
-        }
-      },
-      "Encomendas.Shared.Models/1.0.0": {
-        "type": "project",
-        "framework": ".NETCoreApp,Version=v8.0",
-        "dependencies": {
-          "Microsoft.AspNetCore.Identity.EntityFrameworkCore": "8.0.7",
-          "Microsoft.AspNetCore.OpenApi": "8.0.7",
-          "Microsoft.Data.SqlClient": "6.0.2",
-          "Microsoft.EntityFrameworkCore.Proxies": "9.0.4",
-          "Microsoft.EntityFrameworkCore.SqlServer": "9.0.4",
-          "Swashbuckle.AspNetCore": "8.1.1",
-          "Swashbuckle.AspNetCore.Swagger": "8.1.1",
-          "Swashbuckle.AspNetCore.SwaggerUI": "8.1.1"
-        },
-        "compile": {
-          "bin/placeholder/Encomendas.Shared.Models.dll": {}
-        },
-        "runtime": {
-          "bin/placeholder/Encomendas.Shared.Models.dll": {}
-        }
-      },
       "InventarioMed.Shared.Models/1.0.0": {
         "type": "project",
         "framework": ".NETCoreApp,Version=v8.0",
@@ -4789,16 +4747,6 @@
         "version.txt"
       ]
     },
-    "Encomendas.Shared.Data/1.0.0": {
-      "type": "project",
-      "path": "../Encomendas.Shared.Data/Encomendas.Shared.Data.csproj",
-      "msbuildProject": "../Encomendas.Shared.Data/Encomendas.Shared.Data.csproj"
-    },
-    "Encomendas.Shared.Models/1.0.0": {
-      "type": "project",
-      "path": "../InventarioMed.Shared.Models/Encomendas.Shared.Models.csproj",
-      "msbuildProject": "../InventarioMed.Shared.Models/Encomendas.Shared.Models.csproj"
-    },
     "InventarioMed.Shared.Models/1.0.0": {
       "type": "project",
       "path": "../InventarioMed.Shared.Models/InventarioMed.Shared.Models.csproj",
@@ -4807,8 +4755,7 @@
   },
   "projectFileDependencyGroups": {
     "net8.0": [
-      "Encomendas.Shared.Data >= 1.0.0",
-      "Encomendas.Shared.Models >= 1.0.0",
+      "InventarioMed.Shared.Models >= 1.0.0",
       "Microsoft.AspNetCore.Identity.EntityFrameworkCore >= 8.0.7",
       "Microsoft.AspNetCore.OpenApi >= 8.0.7",
       "Microsoft.Data.SqlClient >= 6.0.2",
@@ -4828,11 +4775,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\tmagalhaes\\GIT\\inventariomed\\Encomendas_Console\\Encomendas_Console.csproj",
-      "projectName": "Encomendas_Console",
-      "projectPath": "C:\\Users\\tmagalhaes\\GIT\\inventariomed\\Encomendas_Console\\Encomendas_Console.csproj",
+      "projectUniqueName": "C:\\Users\\tmagalhaes\\GIT\\inventariomed\\InventarioMed.Shared.Data\\Encomendas.Shared.Data.csproj",
+      "projectName": "Encomendas.Shared.Data",
+      "projectPath": "C:\\Users\\tmagalhaes\\GIT\\inventariomed\\InventarioMed.Shared.Data\\Encomendas.Shared.Data.csproj",
       "packagesPath": "C:\\Users\\tmagalhaes\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\tmagalhaes\\GIT\\inventariomed\\Encomendas_Console\\obj\\",
+      "outputPath": "C:\\Users\\tmagalhaes\\GIT\\inventariomed\\InventarioMed.Shared.Data\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
@@ -4853,17 +4800,8 @@
         "net8.0": {
           "targetAlias": "net8.0",
           "projectReferences": {
-            "C:\\Users\\tmagalhaes\\GIT\\inventariomed\\Encomendas.Shared.Data\\Encomendas.Shared.Data.csproj": {
-              "projectPath": "C:\\Users\\tmagalhaes\\GIT\\inventariomed\\Encomendas.Shared.Data\\Encomendas.Shared.Data.csproj"
-            },
-            "C:\\Users\\tmagalhaes\\GIT\\inventariomed\\Encomendas.Shared.Models\\Encomendas.Shared.Models.csproj": {
-              "projectPath": "C:\\Users\\tmagalhaes\\GIT\\inventariomed\\Encomendas.Shared.Models\\Encomendas.Shared.Models.csproj"
-            },
-            "C:\\Users\\tmagalhaes\\GIT\\inventariomed\\InventarioMed.Shared.Data\\Encomendas.Shared.Data.csproj": {
-              "projectPath": "C:\\Users\\tmagalhaes\\GIT\\inventariomed\\InventarioMed.Shared.Data\\Encomendas.Shared.Data.csproj"
-            },
-            "C:\\Users\\tmagalhaes\\GIT\\inventariomed\\InventarioMed.Shared.Models\\Encomendas.Shared.Models.csproj": {
-              "projectPath": "C:\\Users\\tmagalhaes\\GIT\\inventariomed\\InventarioMed.Shared.Models\\Encomendas.Shared.Models.csproj"
+            "C:\\Users\\tmagalhaes\\GIT\\inventariomed\\InventarioMed.Shared.Models\\InventarioMed.Shared.Models.csproj": {
+              "projectPath": "C:\\Users\\tmagalhaes\\GIT\\inventariomed\\InventarioMed.Shared.Models\\InventarioMed.Shared.Models.csproj"
             }
           }
         }
