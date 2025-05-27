@@ -1,0 +1,7 @@
+C:\Users\tmagalhaes\GIT\inventariomed\Encomendas_API\obj\Debug\net8.0\Encomendas_API.csproj.AssemblyReference.cache
+C:\Users\tmagalhaes\GIT\inventariomed\Encomendas_API\obj\Debug\net8.0\Encomendas_API.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\tmagalhaes\GIT\inventariomed\Encomendas_API\obj\Debug\net8.0\Encomendas_API.AssemblyInfoInputs.cache
+C:\Users\tmagalhaes\GIT\inventariomed\Encomendas_API\obj\Debug\net8.0\Encomendas_API.AssemblyInfo.cs
+C:\Users\tmagalhaes\GIT\inventariomed\Encomendas_API\obj\Debug\net8.0\Encomendas_API.csproj.CoreCompileInputs.cache
+C:\Users\tmagalhaes\GIT\inventariomed\Encomendas_API\obj\Debug\net8.0\Encomendas_API.MvcApplicationPartsAssemblyInfo.cache
+C:\Users\tmagalhaes\GIT\inventariomed\Encomendas_API\obj\Debug\net8.0\Encomendas_API.sourcelink.json

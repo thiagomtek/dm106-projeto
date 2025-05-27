@@ -1,0 +1,12 @@
+C:\Users\tmagalhaes\GIT\inventariomed\InventarioMed.Shared.Data\obj\Debug\net8.0\Encomendas.Shared.Data.csproj.AssemblyReference.cache
+C:\Users\tmagalhaes\GIT\inventariomed\InventarioMed.Shared.Data\obj\Debug\net8.0\Encomendas.Shared.Data.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\tmagalhaes\GIT\inventariomed\InventarioMed.Shared.Data\obj\Debug\net8.0\Encomendas.Shared.Data.AssemblyInfoInputs.cache
+C:\Users\tmagalhaes\GIT\inventariomed\InventarioMed.Shared.Data\obj\Debug\net8.0\Encomendas.Shared.Data.AssemblyInfo.cs
+C:\Users\tmagalhaes\GIT\inventariomed\InventarioMed.Shared.Data\obj\Debug\net8.0\Encomendas.Shared.Data.csproj.CoreCompileInputs.cache
+C:\Users\tmagalhaes\GIT\inventariomed\InventarioMed.Shared.Data\obj\Debug\net8.0\Encomendas.Shared.Data.sourcelink.json
+C:\Users\tmagalhaes\GIT\inventariomed\Encomendas.Shared.Data\obj\Debug\net8.0\Encomendas.Shared.Data.csproj.AssemblyReference.cache
+C:\Users\tmagalhaes\GIT\inventariomed\Encomendas.Shared.Data\obj\Debug\net8.0\Encomendas.Shared.Data.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\tmagalhaes\GIT\inventariomed\Encomendas.Shared.Data\obj\Debug\net8.0\Encomendas.Shared.Data.AssemblyInfoInputs.cache
+C:\Users\tmagalhaes\GIT\inventariomed\Encomendas.Shared.Data\obj\Debug\net8.0\Encomendas.Shared.Data.AssemblyInfo.cs
+C:\Users\tmagalhaes\GIT\inventariomed\Encomendas.Shared.Data\obj\Debug\net8.0\Encomendas.Shared.Data.csproj.CoreCompileInputs.cache
+C:\Users\tmagalhaes\GIT\inventariomed\Encomendas.Shared.Data\obj\Debug\net8.0\Encomendas.Shared.Data.sourcelink.json
